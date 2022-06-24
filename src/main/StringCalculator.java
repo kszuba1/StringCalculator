@@ -19,6 +19,9 @@ public class StringCalculator {
 
         int sum=0;
 
+        // replace all newLines with coma
+        number = number.replace("\n", ",");
+        
         String[] numbers_list = number.split(",");
 
         for (String numb : numbers_list){

@@ -38,6 +38,15 @@ public class StringCalculatorTest {
         assertEquals(-331, StringCalculator.add("-557,123,419,-200,-116"));
     }
 
+    // zadanie 3
+
+    @Test
+    public void shouldReturnSumIfNewLineSeparator(){
+
+        assertEquals(28, StringCalculator.add("1,2,3,4\n5,6,7"));
+        assertEquals(8, StringCalculator.add("1\n-2\n-13,4\n5,6,7"));
+    }
+
 
 
 }

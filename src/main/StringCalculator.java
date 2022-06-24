@@ -18,11 +18,20 @@ public class StringCalculator {
 //        }
 
         int sum=0;
+        // default delimiter is coma
+        String delimiter = ",";
+        // check if there is custom delimiter
+        if (number.startsWith("//")) {
+            delimiter = number.substring(2, number.indexOf("\n"));
 
-        // replace all newLines with coma
-        number = number.replace("\n", ",");
-        
-        String[] numbers_list = number.split(",");
+            // remove delimiter signature
+            number = number.substring(number.indexOf("\n") + 1);
+        }
+
+        // replace all newLines with delimiter
+        number = number.replace("\n", delimiter);
+
+        String[] numbers_list = number.split(delimiter);
 
         for (String numb : numbers_list){
             sum+=Integer.parseInt(numb);

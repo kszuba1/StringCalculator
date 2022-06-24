@@ -34,7 +34,7 @@ public class StringCalculatorTest {
 
     @Test
     public void shouldReturnSumIfMultipleInts(){
-        assertEquals(59, StringCalculator.add("21,23,15"));
+        assertEquals(59, StringCalculator.add("21,23\n15"));
         assertEquals(-331, StringCalculator.add("-557,123,419,-200,-116"));
     }
 
@@ -45,6 +45,16 @@ public class StringCalculatorTest {
 
         assertEquals(28, StringCalculator.add("1,2,3,4\n5,6,7"));
         assertEquals(8, StringCalculator.add("1\n-2\n-13,4\n5,6,7"));
+    }
+
+    // zadanie 4
+    @Test
+    public void shouldReturnSumIfCustomDelimiter(){
+
+        assertEquals(17, StringCalculator.add("//---\n1---2---10----4---8"));
+
+        assertEquals(5, StringCalculator.add("////\n1//2//2"));
+
     }
 
 

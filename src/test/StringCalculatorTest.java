@@ -25,12 +25,18 @@ public class StringCalculatorTest {
         assertEquals(0, StringCalculator.add(""));
     }
 
+//    @Test
+//    public void shouldThrowExceptionIfMoreThanTwoInts(){
+//        assertThrows( Throwable.class, () -> StringCalculator.add("1,2,3"));
+//    }
+
+    // zadanie 2
+
     @Test
-    public void shouldThrowExceptionIfMoreThanTwoInts(){
-        assertThrows( Throwable.class, () -> StringCalculator.add("1,2,3"));
+    public void shouldReturnSumIfMultipleInts(){
+        assertEquals(59, StringCalculator.add("21,23,15"));
+        assertEquals(-331, StringCalculator.add("-557,123,419,-200,-116"));
     }
-
-
 
 
 

@@ -12,10 +12,10 @@ public class StringCalculator {
             return 0;
         }
 
-        // avoid more than 2 elements in argument
-        if (number.length() - number.replace(",", "").length()>1) {
-            throw new RuntimeException();
-        }
+//        // avoid more than 2 elements in argument
+//        if (number.length() - number.replace(",", "").length()>1) {
+//            throw new RuntimeException();
+//        }
 
         int sum=0;
 

@@ -1,5 +1,8 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringCalculator {
 
     private StringCalculator(){
@@ -33,9 +36,14 @@ public class StringCalculator {
 
         String[] numbers_list = number.split(delimiter);
 
+        String negatives = "";
+
         for (String numb : numbers_list){
             sum+=Integer.parseInt(numb);
+            if (Integer.parseInt(numb) < 0) negatives = negatives.concat(" " + numb);
         }
+
+        if (!negatives.isEmpty()) throw new RuntimeException("Negatives not allowed! ->" + negatives);
         return sum;
     }
 

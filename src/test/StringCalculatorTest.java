@@ -35,7 +35,7 @@ public class StringCalculatorTest {
     @Test
     public void shouldReturnSumIfMultipleInts(){
         assertEquals(59, StringCalculator.add("21,23\n15"));
-        assertEquals(-331, StringCalculator.add("-557,123,419,-200,-116"));
+//        assertEquals(-331, StringCalculator.add("-557,123,419,-200,-116"));
     }
 
     // zadanie 3
@@ -44,7 +44,7 @@ public class StringCalculatorTest {
     public void shouldReturnSumIfNewLineSeparator(){
 
         assertEquals(28, StringCalculator.add("1,2,3,4\n5,6,7"));
-        assertEquals(8, StringCalculator.add("1\n-2\n-13,4\n5,6,7"));
+//        assertEquals(8, StringCalculator.add("1\n-2\n-13,4\n5,6,7"));
     }
 
     // zadanie 4
@@ -55,6 +55,18 @@ public class StringCalculatorTest {
 
         assertEquals(5, StringCalculator.add("////\n1//2//2"));
 
+    }
+
+    // zadanie 5
+
+    @Test
+    public void shouldThrowExceptionIfNegativeValue(){
+        String numbers = "15 -13 44";
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> {
+            StringCalculator.add("// \n" + numbers);
+        });
+
+        assertEquals("Negatives not allowed! -> " + "-13", exception.getMessage());
     }
 
 

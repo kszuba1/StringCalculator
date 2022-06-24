@@ -11,7 +11,7 @@ public class StringCalculatorTest {
     // zadanie 1
     @Test
     public void shouldReturnSumIfTwoInts(){
-        assertEquals(1, StringCalculator.add("-7,8"));
+        assertEquals(15, StringCalculator.add("7,8"));
     }
 
     @Test
@@ -51,7 +51,7 @@ public class StringCalculatorTest {
     @Test
     public void shouldReturnSumIfCustomDelimiter(){
 
-        assertEquals(17, StringCalculator.add("//---\n1---2---10----4---8"));
+        assertEquals(25, StringCalculator.add("//---\n1---2---10---4---8"));
 
         assertEquals(5, StringCalculator.add("////\n1//2//2"));
 
@@ -67,6 +67,14 @@ public class StringCalculatorTest {
         });
 
         assertEquals("Negatives not allowed! -> " + "-13", exception.getMessage());
+    }
+
+    // zadanie 6
+
+    @Test
+    public void shouldIgnoreWhenGreaterThan1000(){
+        assertEquals(10, StringCalculator.add("1\n2,1001,7"));
+        assertEquals(1000, StringCalculator.add("1000,1001"));
     }
 
 

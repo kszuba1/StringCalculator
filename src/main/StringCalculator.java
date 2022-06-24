@@ -39,6 +39,7 @@ public class StringCalculator {
         String negatives = "";
 
         for (String numb : numbers_list){
+            if (Integer.parseInt(numb) > 1000) continue;
             sum+=Integer.parseInt(numb);
             if (Integer.parseInt(numb) < 0) negatives = negatives.concat(" " + numb);
         }
